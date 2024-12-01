@@ -1,0 +1,43 @@
+name: Flutter CI
+
+# Trigger the workflow on push or pull request events
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  # Define the job to run the tests
+  flutter_test:
+    runs-on: ubuntu-latest  # You can also use macos-latest or windows-latest depending on your needs
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # Step 2: Set up Flutter environment
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.10.0'  # Use the version of Flutter you want
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: |
+          flutter pub get
+
+      # Step 4: Run tests
+      - name: Run tests
+        run: |
+          flutter test
+
+      # Step 5: Upload test results (optional, if you want to use a test report)
+      - name: Upload test results
+        uses: actions/upload-artifact@v2
+        with:
+          name: flutter-test-results
+          path: test/test_report.xml  # If you generate a test report (e.g., using a test runner like junit)

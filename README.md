@@ -61,6 +61,8 @@ cd orderviz
   points for more details, making the data more engaging and easier to explore.
 - App Icon and Splash Screen: A custom app icon and splash screen that reflect the branding of the
   app, providing a polished and professional introduction when launching the app.
+- CI/CD
+  - Github actions to run tests based on a trigger -Commit here-
 
 ## Notes
 
