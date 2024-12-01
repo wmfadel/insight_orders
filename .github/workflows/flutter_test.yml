@@ -1,13 +1,14 @@
 name: Flutter CI
 
-# Trigger the workflow on push or pull request events
 on:
   push:
     branches:
       - main
+      - develop
   pull_request:
     branches:
       - main
+      - develop
 
 jobs:
   # Define the job to run the tests
@@ -19,11 +20,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      # Step 2: Set up Flutter environment
+      # Step 2: Set up Flutter environment (using Flutter 3.24.5)
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.10.0'  # Use the version of Flutter you want
+          flutter-version: '3.24.5'  # Use Flutter 3.24.5
 
       # Step 3: Install dependencies
       - name: Install dependencies
@@ -37,7 +38,7 @@ jobs:
 
       # Step 5: Upload test results (optional, if you want to use a test report)
       - name: Upload test results
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: flutter-test-results
           path: test/test_report.xml  # If you generate a test report (e.g., using a test runner like junit)
