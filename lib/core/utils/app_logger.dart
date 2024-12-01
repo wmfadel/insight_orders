@@ -9,7 +9,5 @@ class AppLogger {
 
   static w(dynamic message) => _logger.w(message);
 
-  static v(dynamic message) => _logger.v(message);
-
   static i(dynamic message) => _logger.i(message);
 }
