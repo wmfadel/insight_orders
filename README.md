@@ -64,7 +64,8 @@ cd orderviz
 - CI/CD
     - Github actions to run tests based on a trigger -Commit here-
 - Automations: Added a simple make file to simply the process of running the app and tests.
-
+- Accessibility: The app uses semantic labels to allow users with disabilities to use the app using
+  screen reader apps
 
 ## Notes
 

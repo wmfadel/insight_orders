@@ -1,4 +1,5 @@
-import 'dart:ui';
+
+import 'package:flutter/material.dart';
 
 class AppColors {
   // Primary colors
@@ -45,4 +46,10 @@ class AppColors {
   static const Color surfaceContainerHigh = Color(0xFF0A7770); // #0A7770
   static const Color surfaceContainerHighest = Color(0xFF0C7E44); // #0C7E44
   static const Color errorSurface = Color(0xff313131); // #0C7E44
+
+// status colors
+  static const Color statusOrdered = Colors.blue;
+  static const Color statusDelivered = Colors.green;
+  static const Color statusReturned = Colors.red;
+
 }

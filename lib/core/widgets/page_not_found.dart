@@ -8,7 +8,6 @@ import 'package:rive/rive.dart';
 class NotFoundPage extends StatelessWidget {
   const NotFoundPage({super.key});
 
-// TODO test this widget
   @override
   Widget build(BuildContext context) {
     return Scaffold(

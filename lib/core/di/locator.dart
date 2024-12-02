@@ -1,7 +1,8 @@
 import 'package:get_it/get_it.dart';
 import 'package:insight_orders/core/localization/controller/localization_cubit.dart';
+import 'package:insight_orders/features/orders/services/orders_service.dart';
 
-import 'local_cache.dart';
+import '../services/local_cache.dart';
 
 class Locator {
   setupLocator() {
@@ -11,5 +12,6 @@ class Locator {
     GetIt.instance.registerSingleton<LocalizationCubit>(
       LocalizationCubit(cache: cache),
     );
+    GetIt.instance.registerSingleton<OrdersService>(OrdersService());
   }
 }

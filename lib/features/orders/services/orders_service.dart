@@ -11,7 +11,7 @@ class OrdersService {
 
   List<Order> get orders => [..._orders];
 
-  Future<void> fetchOrders() async {
+  Future<void> getOrders() async {
     final orders = await _ordersRepository.getOrders();
     _orders = orders;
   }
