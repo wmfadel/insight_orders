@@ -62,10 +62,13 @@ cd orderviz
 - App Icon and Splash Screen: A custom app icon and splash screen that reflect the branding of the
   app, providing a polished and professional introduction when launching the app.
 - CI/CD
-  - Github actions to run tests based on a trigger -Commit here-
+    - Github actions to run tests based on a trigger -Commit here-
+- Firebase
+    - Firestore is added to provide a remote source of localization data, that is used to override
+      the default localization data in the app, without having to update the app.
 
 ## Notes
 
-- No localization as the data is static in a file there will be no data localization, showing the
-  page in two different languages will not give the best experience.
+- Localization added with support for one language as the data is static in a file there will be no
+  data localization, showing the page in two different languages will not give the best experience.
 - No Custom transition animation in router configuration to keep the native feel.
