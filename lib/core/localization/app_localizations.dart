@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -44,26 +43,11 @@ class AppLocalizations {
     _localTranslation = json.decode(jsonString);
   }
 
-  Future<void> _fetchRemoteTranslation() async {
-    try {
-      DocumentSnapshot snapshot = await FirebaseFirestore.instance
-          .collection('localization')
-          .doc(locale.languageCode)
-          .get();
-      _remoteTranslation = snapshot.data() as Map<String, dynamic>;
-    } catch (_) {
-      _remoteTranslation = {};
-    }
-  }
-
   Map<String, dynamic> _localTranslation = {};
   String jsonString = '';
 
   Future<void> load() async {
-    await Future.wait([
-      _fetchLocalTranslation(),
-      _fetchRemoteTranslation(),
-    ]);
+    await _fetchLocalTranslation();
     _localTranslation.addAll(_remoteTranslation);
     _localizedStrings = _localTranslation.map((key, value) {
       return MapEntry(key, value.toString());

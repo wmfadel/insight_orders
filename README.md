@@ -63,9 +63,8 @@ cd orderviz
   app, providing a polished and professional introduction when launching the app.
 - CI/CD
     - Github actions to run tests based on a trigger -Commit here-
-- Firebase
-    - Firestore is added to provide a remote source of localization data, that is used to override
-      the default localization data in the app, without having to update the app.
+- Automations: Added a simple make file to simply the process of running the app and tests.
+
 
 ## Notes
 
