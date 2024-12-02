@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:insight_orders/core/utils/app_logger.dart';
+import 'package:insight_orders/core/widgets/page_not_found.dart';
 import 'package:insight_orders/features/pages/orders_page.dart';
 
 class AppRouter {
@@ -34,8 +35,7 @@ class AppRouter {
       ],
       errorBuilder: (context, state) {
         AppLogger.e('Error: ${state.error}');
-        // TODO create error page
-        return const SizedBox();
+        return const NotFoundPage();
       },
       redirect: (context, state) {
         AppLogger.i('Moving to page: ${state.name}'
