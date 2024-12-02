@@ -1,5 +1,5 @@
-import 'package:insight_orders/features/models/order.dart';
-import 'package:insight_orders/features/repositories/orders_repository.dart';
+import 'package:insight_orders/features/orders/models/order.dart';
+import 'package:insight_orders/features/orders/repositories/orders_repository.dart';
 
 class OrdersService {
   final OrdersRepository _ordersRepository;

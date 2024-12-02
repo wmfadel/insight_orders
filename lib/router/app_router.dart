@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:insight_orders/core/utils/app_logger.dart';
 import 'package:insight_orders/core/widgets/page_not_found.dart';
-import 'package:insight_orders/features/pages/orders_page.dart';
+import 'package:insight_orders/features/orders/pages/orders_page.dart';
 
 class AppRouter {
   static const String ordersPath = '/orders';

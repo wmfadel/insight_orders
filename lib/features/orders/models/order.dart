@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:insight_orders/features/models/order_status.dart';
+import 'package:insight_orders/features/orders/models/order_status.dart';
 
 class Order extends Equatable {
   Order({

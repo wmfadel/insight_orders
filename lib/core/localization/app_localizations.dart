@@ -35,7 +35,6 @@ class AppLocalizations {
   }
 
   Map<String, String> _localizedStrings = {};
-  Map<String, dynamic> _remoteTranslation = {};
 
   Future<void> _fetchLocalTranslation() async {
     String jsonString = await rootBundle
@@ -48,7 +47,6 @@ class AppLocalizations {
 
   Future<void> load() async {
     await _fetchLocalTranslation();
-    _localTranslation.addAll(_remoteTranslation);
     _localizedStrings = _localTranslation.map((key, value) {
       return MapEntry(key, value.toString());
     });

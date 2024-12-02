@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:flutter/foundation.dart';
 import 'package:insight_orders/core/constants/strings.dart';
-import 'package:insight_orders/features/models/order.dart';
+import 'package:insight_orders/features/orders/models/order.dart';
 
 /// AssetLoader typedef to safely inject the `rootBundle.loadString` function
 /// for usage without tight coupling simplifying testing

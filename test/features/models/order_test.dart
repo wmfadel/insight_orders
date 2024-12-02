@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:insight_orders/features/models/order.dart';
-import 'package:insight_orders/features/models/order_status.dart';
+import 'package:insight_orders/features/orders/models/order.dart';
+import 'package:insight_orders/features/orders/models/order_status.dart';
 
 void main() {
   group('Order', () {
