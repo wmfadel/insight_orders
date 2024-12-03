@@ -27,6 +27,7 @@ class InsightOrdersApp extends StatelessWidget {
       ],
       locale: localizationCubit.locale,
       supportedLocales: const [Locale('en')],
+      debugShowCheckedModeBanner: false,
     );
   }
 }

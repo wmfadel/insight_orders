@@ -81,16 +81,19 @@ class _StatEntry extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(label, style: Theme.of(context).textTheme.bodyLarge),
-        Text(value,
-            style: Theme.of(context)
-                .textTheme
-                .bodyLarge
-                ?.copyWith(fontWeight: FontWeight.bold)),
-      ],
+    return ConstrainedBox(
+      constraints: const BoxConstraints(maxWidth: 500),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(label, style: Theme.of(context).textTheme.bodyLarge),
+          Text(value,
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyLarge
+                  ?.copyWith(fontWeight: FontWeight.bold)),
+        ],
+      ),
     );
   }
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:insight_orders/core/constants/localization_keys.dart';
+import 'package:insight_orders/core/localization/app_localizations.dart';
 import 'package:insight_orders/features/orders/widgets/chart_view.dart';
 import 'package:insight_orders/features/orders/widgets/order_stats.dart';
 
@@ -20,7 +22,7 @@ class ChartPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Chart & Stats',
+                    context.translate(L10nKeys.chartAndStats),
                       style: Theme.of(context).textTheme.headlineLarge,
                     ),
                     IconButton(
@@ -36,7 +38,7 @@ class ChartPage extends StatelessWidget {
                   child: const ChartView(),
                 ),
                 // Additional Stats
-                const OrderStats()
+                const Align(alignment: Alignment.center, child: OrderStats())
               ],
             ),
           ),

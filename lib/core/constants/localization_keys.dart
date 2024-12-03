@@ -24,6 +24,7 @@ class L10nKeys {
   static const String evening = "evening";
   static const String night = "night";
   static const String totalSales = "totalSales";
+  static const String chartAndStats = "chartAndStats";
 
 
 
