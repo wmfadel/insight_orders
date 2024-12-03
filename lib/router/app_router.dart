@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:insight_orders/core/utils/app_logger.dart';
 import 'package:insight_orders/core/widgets/page_not_found.dart';
+import 'package:insight_orders/features/orders/controllers/chart/chart_cubit.dart';
 import 'package:insight_orders/features/orders/controllers/orders_cubit.dart';
 import 'package:insight_orders/features/orders/pages/chart_page.dart';
 import 'package:insight_orders/features/orders/pages/orders_page.dart';
@@ -36,7 +37,12 @@ class AppRouter {
               path: ordersChartPath,
               name: ordersChartName,
               builder: (BuildContext context, GoRouterState state) {
-                return const ChartPage();
+                return BlocProvider<ChartCubit>(
+                  create: (context) => ChartCubit(
+                    ordersService: GetIt.instance.get<OrdersService>(),
+                  ),
+                  child: const ChartPage(),
+                );
               },
             ),
           ],
