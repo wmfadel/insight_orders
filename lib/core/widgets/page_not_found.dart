@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:insight_orders/core/constants/localization_keys.dart';
 import 'package:insight_orders/core/constants/strings.dart';
+import 'package:insight_orders/core/localization/app_localizations.dart';
 import 'package:insight_orders/core/theme/colors.dart';
 import 'package:insight_orders/router/app_router.dart';
 import 'package:rive/rive.dart';
@@ -28,7 +30,7 @@ class NotFoundPage extends StatelessWidget {
             const SizedBox(height: 16),
             ElevatedButton(
               child: Text(
-                'Go Back', // TODO localize
+                context.translate(L10nKeys.goBack),
                 style: Theme.of(context).textTheme.bodyLarge,
               ),
               onPressed: () {

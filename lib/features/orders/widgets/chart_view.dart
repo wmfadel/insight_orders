@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:insight_orders/core/constants/localization_keys.dart';
+import 'package:insight_orders/core/localization/app_localizations.dart';
 import 'package:insight_orders/features/orders/controllers/chart/chart_cubit.dart';
 import 'package:insight_orders/features/orders/models/chart_data.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
@@ -28,7 +30,7 @@ class _ChartViewState extends State<ChartView> {
       tooltipBehavior: _tooltipBehavior,
       series: <LineSeries<OrderData, String>>[
         LineSeries<OrderData, String>(
-          name: 'Orders',
+          name: context.translate(L10nKeys.orders),
           dataSource: cubit.chartData,
           xValueMapper: (OrderData data, _) => data.time,
           yValueMapper: (OrderData data, _) => data.orderCount,
@@ -36,9 +38,11 @@ class _ChartViewState extends State<ChartView> {
         ),
       ],
       primaryXAxis: const CategoryAxis(),
-      primaryYAxis: const NumericAxis(
+      primaryYAxis: NumericAxis(
         edgeLabelPlacement: EdgeLabelPlacement.shift,
-        title: AxisTitle(text: 'Number of Orders'),
+        title: AxisTitle(
+          text: context.translate(L10nKeys.numberOFOrders),
+        ),
       ),
     );
   }

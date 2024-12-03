@@ -1,3 +1,27 @@
 {
-
+  "someThingWentWrong": "Something went wrong",
+  "goBack": "Go Back",
+  "orders": "Orders",
+  "openCharts": "Open charts",
+  "numberOFOrders": "Number of orders",
+  "unknown": "Unknown",
+  "orderImageFor": "Order image for",
+  "price": "Price",
+  "by": "by",
+  "orderStatus": "Order Status",
+  "registered": "Registered",
+  "activeOrder": "Active order",
+  "inactiveOrder": "Inactive order",
+  "totalOrders": "Total Orders",
+  "averageOrderValue": "Average Order Value",
+  "highestOrderValue": "Highest Order Value",
+  "activeInactiveOrders": "Active/Inactive Orders",
+  "active": "Active",
+  "inactive": "Inactive",
+  "ordersByTime": "Orders by Time of Day",
+  "morning": "Morning",
+  "afternoon": "Afternoon",
+  "evening": "Evening",
+  "night": "Night",
+  "totalSales": "Total Sales"
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:insight_orders/core/constants/localization_keys.dart';
+import 'package:insight_orders/core/localization/app_localizations.dart';
 import 'package:insight_orders/core/theme/colors.dart';
 import 'package:insight_orders/features/orders/models/order.dart';
 import 'package:insight_orders/features/orders/models/order_status.dart';
@@ -21,7 +23,8 @@ class OrderListItem extends StatelessWidget {
           children: [
             // Image Section
             Semantics(
-              label: 'Order image for ${order.company ?? "unknown company"}',
+              label:
+                  '${context.translate(L10nKeys.orderImageFor)} ${order.company ?? context.translate(L10nKeys.unknown)}',
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(8),
                 child: Image.network(
@@ -51,13 +54,15 @@ class OrderListItem extends StatelessWidget {
                             ?.copyWith(fontWeight: FontWeight.bold),
                       ),
                       Semantics(
-                        label: 'Price: ${order.price ?? "not available"}',
+                        label:
+                            '${context.translate(L10nKeys.price)}: ${order.price ?? "-"}',
                         child: Text(
                           order.price ?? '-',
-                          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                            fontWeight: FontWeight.bold,
-                            color: _statusColor(context, order.status),
-                          ),
+                          style:
+                              Theme.of(context).textTheme.bodyMedium?.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                    color: _statusColor(context, order.status),
+                                  ),
                         ),
                       ),
                     ],
@@ -67,7 +72,7 @@ class OrderListItem extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'by: ${order.buyer ?? '-'}',
+                        '${context.translate(L10nKeys.by)}: ${order.buyer ?? '-'}',
                         style: Theme.of(context).textTheme.bodyMedium,
                       ),
                       Container(
@@ -79,7 +84,8 @@ class OrderListItem extends StatelessWidget {
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: Semantics(
-                          label: 'Order status: ${order.status?.name ?? "unknown"}',
+                          label:
+                              '${context.translate(L10nKeys.orderStatus)}: ${order.status?.name ?? "-"}',
                           child: Text(
                             order.status?.name ?? '-',
                             style: Theme.of(context)
@@ -102,15 +108,15 @@ class OrderListItem extends StatelessWidget {
                           child: Row(
                             children: (order.tags ?? [])
                                 .map((tag) => Container(
-                              padding: const EdgeInsets.all(4),
-                              margin: const EdgeInsets.only(right: 8),
-                              decoration: BoxDecoration(
-                                  color: AppColors.primary
-                                      .withOpacity(0.25),
-                                  borderRadius: const BorderRadius.all(
-                                      Radius.circular(4))),
-                              child: Text(tag),
-                            ))
+                                      padding: const EdgeInsets.all(4),
+                                      margin: const EdgeInsets.only(right: 8),
+                                      decoration: BoxDecoration(
+                                          color: AppColors.primary
+                                              .withOpacity(0.25),
+                                          borderRadius: const BorderRadius.all(
+                                              Radius.circular(4))),
+                                      child: Text(tag),
+                                    ))
                                 .toList(),
                           ),
                         ),
@@ -124,16 +130,16 @@ class OrderListItem extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Registered: ${order.registered?.split('T')[0]}',
+                        '${context.translate(L10nKeys.registered)}: ${order.registered?.split('T')[0]}',
                         style: Theme.of(context)
                             .textTheme
                             .labelMedium
                             ?.copyWith(color: AppColors.onSurface),
                       ),
                       Semantics(
-                        label: (order.isActive ?? false)
-                            ? 'Active order'
-                            : 'Inactive order',
+                        label: context.translate((order.isActive ?? false)
+                            ? L10nKeys.activeOrder
+                            : L10nKeys.inactiveOrder),
                         child: Icon(
                           (order.isActive ?? false)
                               ? Icons.check_circle

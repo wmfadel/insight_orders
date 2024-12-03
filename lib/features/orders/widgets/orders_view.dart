@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:insight_orders/core/constants/localization_keys.dart';
+import 'package:insight_orders/core/localization/app_localizations.dart';
 import 'package:insight_orders/features/orders/controllers/orders_cubit.dart';
 import 'package:insight_orders/features/orders/widgets/orders_list.dart';
 import 'package:insight_orders/features/orders/widgets/to_charts_icon.dart';
@@ -22,7 +24,7 @@ class OrdersView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Orders', // TODO localize
+                  context.translate(L10nKeys.orders),
                   style: Theme.of(context).textTheme.headlineLarge,
                 ),
                 IconButton(

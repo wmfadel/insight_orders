@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:insight_orders/core/constants/localization_keys.dart';
+import 'package:insight_orders/core/localization/app_localizations.dart';
 
 extension XErrorMessage on BuildContext {
   showError({String? message}) {
@@ -12,7 +14,7 @@ class ErrorMessage {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(
-          message ?? 'Something went wrong', // TODO localize
+          message ?? context.translate(L10nKeys.someThingWentWrong),
           style: Theme.of(context).textTheme.bodyLarge,
         ),
         backgroundColor: Theme.of(context).colorScheme.error,
