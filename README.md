@@ -5,36 +5,28 @@ visualizing the order data. The app is designed to run on Android, iOS, and Web 
 an intuitive way to view and interact with order information.
 
 ## Features
-
 - View a list of orders
 - Visualize order data with charts
 - Multi-platform support (Android, iOS, Web)
 
 ## Installation
-
 Follow these steps to get the app up and running on your local machine:
 
 ### Prerequisites
-
 - Flutter SDK (latest stable version)
 - Dart SDK
 - Xcode (for iOS development)
 - Android Studio or Visual Studio Code (for editing code)
 - A web browser (for the web version)
 
-### Step 1: Clone the repository
+### Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/orderviz.git
-cd orderviz
+git clone https://github.com/wmfadel/insight_orders.git
+cd insight_orders
 ```
 
-## Technical Details
-
-### Project Structure
-
 ### Features
-
 - State Management with BLoC: The app uses the BLoC (Business Logic Component) pattern for managing
   state, ensuring a clean separation of UI and business logic. This architecture promotes
   scalability, testability, and maintainability, making it easier to manage complex state
@@ -68,7 +60,6 @@ cd orderviz
   screen reader apps
 
 ## Notes
-
 - Localization added with support for one language as the data is static in a file there will be no
   data localization, showing the page in two different languages will not give the best experience.
 - No Custom transition animation in router configuration to keep the native feel.
