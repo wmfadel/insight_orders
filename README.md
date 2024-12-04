@@ -26,7 +26,7 @@ git clone https://github.com/wmfadel/insight_orders.git
 cd insight_orders
 ```
 
-### Features
+### Technical details
 - State Management with BLoC: The app uses the BLoC (Business Logic Component) pattern for managing
   state, ensuring a clean separation of UI and business logic. This architecture promotes
   scalability, testability, and maintainability, making it easier to manage complex state
