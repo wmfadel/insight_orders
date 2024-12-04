@@ -32,6 +32,8 @@ class OrderListItem extends StatelessWidget {
                   width: 40,
                   height: 40,
                   fit: BoxFit.cover,
+                  errorBuilder: (context, error, stackTrace) =>
+                      const Icon(Icons.broken_image_outlined),
                 ),
               ),
             ),
