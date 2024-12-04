@@ -24,5 +24,9 @@
   "evening": "Evening",
   "night": "Night",
   "totalSales": "Total Sales",
-  "chartAndStats": "Chart & Stats"
+  "chartAndStats": "Chart & Stats",
+  "oneDay": "One Day",
+  "oneWeek": "One Week",
+  "oneMonth": "One Month",
+  "all": "All"
 }

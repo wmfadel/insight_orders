@@ -25,6 +25,10 @@ class L10nKeys {
   static const String night = "night";
   static const String totalSales = "totalSales";
   static const String chartAndStats = "chartAndStats";
+  static const String oneDay = "oneDay";
+  static const String oneWeek = "oneWeek";
+  static const String oneMonth = "oneMonth";
+  static const String all = "all";
 
 
 
