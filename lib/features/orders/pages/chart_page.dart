@@ -12,17 +12,17 @@ class ChartPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                    context.translate(L10nKeys.chartAndStats),
+                      context.translate(L10nKeys.chartAndStats),
                       style: Theme.of(context).textTheme.headlineLarge,
                     ),
                     IconButton(
@@ -31,16 +31,12 @@ class ChartPage extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 16),
-                Container(
-                  height: 400,
-                  padding: const EdgeInsets.all(16),
-                  child: const ChartView(),
-                ),
-                // Additional Stats
-                const Align(alignment: Alignment.center, child: OrderStats())
-              ],
-            ),
+              ),
+              const SizedBox(height: 16),
+              const SizedBox(height: 400, child: ChartView()),
+              const SizedBox(height: 16),
+              const Align(alignment: Alignment.center, child: OrderStats())
+            ],
           ),
         ),
       ),
